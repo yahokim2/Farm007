@@ -12,12 +12,6 @@ public interface QnaService {
 
 	void insertQna(QnaVO vo);
 
-//	// 게시판 목록  #0522
-//	List<QnaVO> listAllQna();
-//
-//	// 게시판 답변 처리  #0522
-//	void updateQna(QnaVO vo);
-
 	List<QnaVO> getListQna(String id);
 
 }

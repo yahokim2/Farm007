@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.farm.biz.dao.MemberDAO;
+import com.farm.biz.dao.MemberDAO2;
 import com.farm.biz.dto.AddressVO;
 import com.farm.biz.dto.MemberVO;
 
@@ -14,6 +15,9 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDAO memberDao;
+	
+	@Autowired
+	private MemberDAO2 memberDao2;
 	
 	@Override
 	public MemberVO getMember(String id) {
@@ -45,11 +49,18 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberDao.loginID(vo);
 	}
-	// 회원 목록(0522)
+	// 관리자용 memberDao2
 	@Override
 	public List<MemberVO> listMember(String name) {
 		
-		return memberDao.listMember(name);
+		return memberDao2.listMember(name);
+	}
+	
+	// 관리자용
+	@Override
+	public void updateMemberUseyn(String userid) {
+		
+		memberDao2.updateMemberUseyn(userid);		
 	}
 
 	@Override
@@ -69,4 +80,6 @@ public class MemberServiceImpl implements MemberService {
 		
 		memberDao.changePwd(vo);
 	}
+
+
 }

@@ -24,7 +24,8 @@ public interface MemberService {
 
 	List<AddressVO> selectAddressByDong(String dong);
 
-	List<MemberVO> listMember(String name);	// 회원 목록(0522)
+	List<MemberVO> listMember(String name);	 // 관리자용
+	void updateMemberUseyn(String userid);   // 관리자용	
 	
 	String selectIdByNameEmail(MemberVO vo);
 	

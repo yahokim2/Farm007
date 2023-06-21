@@ -20,5 +20,16 @@ public interface ProductService {
 	// 상품 종류별 상품 목록 얻어오기
 	List<ProductVO> getProductListByKind(String kind);
 	
+	//---hjh0620 추가 ---
+	List<ProductVO> 
+	getListProductWithPaging(Criteria criteria, String name);
 
+	int countProductList(String name);
+	
+	List<ProductVO> getListProduct(String name);
+
+	void insertProduct(ProductVO vo);
+
+	void updateProduct(ProductVO vo);
+	//------------------
 }

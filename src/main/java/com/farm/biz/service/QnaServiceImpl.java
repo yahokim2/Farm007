@@ -31,18 +31,6 @@ public class QnaServiceImpl implements QnaService {
 		
 		qnaDao.insertQna(vo);
 	}
-//	// 게시판 목록  #0522
-//	@Override
-//	public List<QnaVO> listAllQna() {
-//
-//		return qnaDao.listAllQna();
-//	}
-//	// 게시판 답변 처리  #0522
-//	@Override
-//	public void updateQna(QnaVO vo) {
-//		
-//		qnaDao.updateQna(vo);
-//	}
 
 	@Override
 	public List<QnaVO> listQna(String id) {

@@ -8,7 +8,7 @@ public interface CommentService {
 
 	int saveComment(ProductCommentVO vo);
 
-	List<ProductCommentVO> listComment(int pseq);
+	List<ProductCommentVO> listComment(int pdseq);
 
 	List<ProductCommentVO> getListComment(int pdseq);
 

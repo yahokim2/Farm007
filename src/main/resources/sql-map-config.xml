@@ -10,15 +10,20 @@
 		<typeAlias type="com.farm.biz.dto.OrderVO" alias="order"/>
 		<typeAlias type="com.farm.biz.dto.QnaVO" alias="qna"/>
 		<typeAlias type="com.farm.biz.dto.ProductCommentVO" alias="comment"/>
+		<typeAlias type="com.farm.biz.dto.AdminVO" alias="admin"/>
 	</typeAliases>
 	
 	<!--  SQL 매핑 파일 등록 -->
 	<mappers>
 		<mapper resource="mappings/product-mapping.xml"/>
 		<mapper resource="mappings/member-mapping.xml"/>
+		<mapper resource="mappings/member-mapping2.xml"/>
 		<mapper resource="mappings/cart-mapping.xml"/>
 		<mapper resource="mappings/order-mapping.xml"/>
+		<mapper resource="mappings/order-mapping2.xml"/>
 		<mapper resource="mappings/qna-mapping.xml"/>
+		<mapper resource="mappings/qna-mapping2.xml"/>
 		<mapper resource="mappings/comment-mapping.xml"/>
+		<mapper resource="mappings/admin-mapping.xml"/>
 	</mappers>
 </configuration>

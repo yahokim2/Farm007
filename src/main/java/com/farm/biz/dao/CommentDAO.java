@@ -18,9 +18,9 @@ public class CommentDAO {
 		return mybatis.insert("CommentMapper.saveComment", vo);
 	}
 	
-	public List<ProductCommentVO> listComment(int pseq) {
+	public List<ProductCommentVO> listComment(int pdseq) {
 		
-		return mybatis.selectList("CommentMapper.commentList", pseq);
+		return mybatis.selectList("CommentMapper.commentList", pdseq);
 	}
 }
 

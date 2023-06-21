@@ -39,5 +39,46 @@ public class ProductDAO  {
 		return mybatis.selectList("ProductMapper.getProductListByKind", kind);
 	}
 
+	//--- hjh0620 추가 -----
+	/*
+	 * 전체 상품목록에 대한 상품 갯수 조회
+	 * 입력 파라미터:
+	 * 		name : 검색할 상품명 (값이 ""인 경우 전체 상품갯수 조회)
+	 */
+	public int countProductList(String name) {
+		
+		return mybatis.selectOne("ProductMapper.countProductList", name);
+	}
+	
+	public List<ProductVO> listProduct(String name) {
+		
+		return mybatis.selectList("ProductMapper.listProduct", name);
+	}
+	
+	/*
+	 * 페이지별 상품 목록 조회
+	 * 입력 파라미터:
+	 * 		Criteria - 현재 페이지 정보
+	 * 		name - 상품명 검색어
+	 */
+	public List<ProductVO> listProductWithPaging(Criteria criteria, String name) {
+		Map<String, Object> map = new HashMap<>();
+		
+		map.put("criteria", criteria);
+		map.put("name", name);
+		
+		return mybatis.selectList("ProductMapper.listProductWithPaging", map);
+	}
+
+	public void insertProduct(ProductVO vo){
+		
+		mybatis.insert("ProductMapper.insertProduct", vo);
+	}
+	
+	public void updateProduct(ProductVO vo) {
+		
+		mybatis.update("ProductMapper.updateProduct", vo);
+	}
+	//--------------------
 
 }
